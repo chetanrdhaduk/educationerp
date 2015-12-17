@@ -55,7 +55,7 @@ class OpExam(models.Model):
     exam_type = fields.Many2one('op.exam.type', 'Exam Type', required=True)
     evaluation_type = fields.Selection(
         [('normal', 'Normal'), ('GPA', 'GPA'), ('CWA', 'CWA'), ('CCE', 'CCE')],
-        'Evaluation Type', required=True)
+        'Evaluation Type')
     attendees_line = fields.One2many(
         'op.exam.attendees', 'exam_id', 'Attendees', required=True)
     venue = fields.Many2one('res.partner', 'Venue')

@@ -34,6 +34,7 @@
 								<separator string="Facilities" />
 								<field name="facility" colspan="4" nolabel="1" />
 							</page>
+							<!--
 							<page string="Asset Management">
 								<separator string="Asset Management" />
 								<field name="asset_line" colspan="4" nolabel="1" >
@@ -44,6 +45,7 @@
 									</tree>
 								</field>
 							</page>
+							-->
 						</notebook>
 						
 					</sheet>

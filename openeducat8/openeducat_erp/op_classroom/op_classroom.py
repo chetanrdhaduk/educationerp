@@ -27,8 +27,8 @@ class OpClassroom(models.Model):
 
     name = fields.Char('Name', size=16, required=True)
     code = fields.Char('Code', size=4, required=True)
-    course_id = fields.Many2one('op.course', 'Course', required=True)
-    standard_id = fields.Many2one('op.standard', 'Standard', required=True)
+    course_id = fields.Many2one('op.course', 'Course')
+    standard_id = fields.Many2one('op.standard', 'Standard')
     capacity = fields.Integer(string='No. Of Person')
     facility = fields.Many2many('op.facility', string='Facilities')
     asset_line = fields.One2many(

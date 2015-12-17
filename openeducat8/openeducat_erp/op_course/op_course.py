@@ -30,7 +30,7 @@ class OpCourse(models.Model):
     section = fields.Char('Section', size=32, required=True)
     evaluation_type = fields.Selection(
         [('normal', 'Normal'), ('GPA', 'GPA'), ('CWA', 'CWA'), ('CCE', 'CCE')],
-        'Evaluation Type', required=True)
+        'Evaluation Type')
     payment_term = fields.Many2one('account.payment.term', 'Payment Term')
     subject_ids = fields.Many2many('op.subject', string='Subject(s)')
 

@@ -85,8 +85,8 @@ class OpStudent(models.Model):
     user_id = fields.Many2one('res.users', 'User')
     placement_line = fields.One2many(
         'op.placement.offer', 'student_id', 'Placement Details')
-    activity_log = fields.One2many(
-        'op.activity', 'student_id', 'Activity Log')
+#     activity_log = fields.One2many(
+#         'op.activity', 'student_id', 'Activity Log')
     parent_ids = fields.Many2many('op.parent', string='Parent')
     gr_no = fields.Char("GR Number", size=20)
     invoice_exists = fields.Boolean('Invoice')

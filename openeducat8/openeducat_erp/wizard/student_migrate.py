@@ -43,18 +43,18 @@ class StudentMigrate(models.TransientModel):
 
     @api.one
     def go_forward(self):
-        activity_type = self.env["op.activity.type"]
+#         activity_type = self.env["op.activity.type"]
         lst_student = self.to_standard_id.student_ids.ids
-        act_type = activity_type.search([('name', '=', 'Migration')], limit=1)
-        if not act_type:
-            act_type = activity_type.create({'name': 'Migration'})
+#         act_type = activity_type.search([('name', '=', 'Migration')], limit=1)
+#         if not act_type:
+#             act_type = activity_type.create({'name': 'Migration'})
         for student in self.student_ids:
-            activity_vals = {
-                'student_id': student.id,
-                'type_id': act_type.id,
-                'date': self.date
-            }
-            self.env['op.activity'].create(activity_vals)
+#             activity_vals = {
+#                 'student_id': student.id,
+#                 'type_id': act_type.id,
+#                 'date': self.date
+#             }
+#             self.env['op.activity'].create(activity_vals)
             student.write({'standard_id': self.to_standard_id.id})
             lst_student.append(student.id)
         self.from_standard_id.student_ids = \

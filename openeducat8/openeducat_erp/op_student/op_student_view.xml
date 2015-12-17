@@ -220,10 +220,12 @@
 								<separator string="Placement Offer" colspan="4" />
 								<field name="placement_line" colspan="4" nolabel="1" />
 							</page>
+							<!--
 							<page string="Activity Log">
 								<separator string="Activity Log" colspan="4" />
 								<field name="activity_log" colspan="4" nolabel="1" />
 							</page>
+							-->
 							<page string="Parent">
 								<separator string="Parent" colspan="4" />
 								<field name="parent_ids" colspan="4" nolabel="1" />

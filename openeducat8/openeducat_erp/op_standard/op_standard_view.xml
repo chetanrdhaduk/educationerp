@@ -10,7 +10,7 @@
 					<field name="sequence" />
 					<field name="code" />
 					<field name="name" />
-					<field name="payment_term" />
+					<!-- <field name="payment_term" /> -->
 					<field name="student_ids" />
 				</tree>
 			</field>
@@ -28,7 +28,7 @@
 							<field name="name" colspan="2" />
 							<field name="course_id" />
 							<field name="sequence" />
-							<field name="payment_term" />
+							<!-- <field name="payment_term" /> -->
 							<separator string="Students" colspan="4" />
 							<field name="student_ids" colspan="4" nolabel="1" >
 									<tree>
