@@ -93,9 +93,9 @@ class OpAdmission(models.Model):
         'Family Income', states={'done': [('readonly', True)]})
     religion_id = fields.Many2one(
         'op.religion', 'Religion', states={'done': [('readonly', True)]})
-    category_id = fields.Many2one(
-        'op.category', 'Category', required=True,
-        states={'done': [('readonly', True)]})
+#     category_id = fields.Many2one(
+#         'op.category', 'Category', required=True,
+#         states={'done': [('readonly', True)]})
     gender = fields.Selection(
         [('m', 'Male'), ('f', 'Female'), ('o', 'Other')], 'Gender',
         required=True, states={'done': [('readonly', True)]})

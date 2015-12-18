@@ -26,7 +26,7 @@ class OpClassroom(models.Model):
     _name = 'op.classroom'
 
     name = fields.Char('Name', size=16, required=True)
-    code = fields.Char('Code', size=4, required=True)
+    code = fields.Char('Code', size=128, required=True)
     course_id = fields.Many2one('op.course', 'Course')
     standard_id = fields.Many2one('op.standard', 'Standard')
     capacity = fields.Integer(string='No. Of Person')

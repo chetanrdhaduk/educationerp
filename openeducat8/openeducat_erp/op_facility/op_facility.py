@@ -27,7 +27,7 @@ class OpFacility(models.Model):
     _rec_name = 'Name'
 
     Name = fields.Char('Name', size=16, required=True)
-    Code = fields.Char('Code', size=4, required=True)
+    Code = fields.Char('Code', size=128, required=True)
     hostel_room_id = fields.Many2one('op.hostel.room', 'Hostel Room')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

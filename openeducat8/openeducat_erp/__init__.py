@@ -37,7 +37,7 @@ from . import op_book
 from . import op_book_movement
 from . import op_book_purchase
 from . import op_book_queue
-from . import op_category
+# from . import op_category
 from . import op_classroom
 from . import op_course
 from . import op_division

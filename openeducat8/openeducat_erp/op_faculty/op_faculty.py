@@ -29,8 +29,8 @@ class OpFaculty(models.Model):
 
     partner_id = fields.Many2one(
         'res.partner', 'Partner', required=True, ondelete="cascade")
-    middle_name = fields.Char('Middle Name', size=128, required=True)
-    last_name = fields.Char('Last Name', size=128, required=True)
+    middle_name = fields.Char('Middle Name', size=128)
+    last_name = fields.Char('Last Name', size=128)
     birth_date = fields.Date('Birth Date', required=True)
     blood_group = fields.Selection(
         [('A+', 'A+ve'), ('B+', 'B+ve'), ('O+', 'O+ve'), ('AB+', 'AB+ve'),
@@ -40,7 +40,7 @@ class OpFaculty(models.Model):
         [('male', 'Male'), ('female', 'Female')], 'Gender', required=True)
     nationality = fields.Many2one('res.country', 'Nationality')
     language = fields.Many2one('res.lang', 'Language')
-    category = fields.Many2one('op.category', 'Category', required=True)
+#     category = fields.Many2one('op.category', 'Category', required=True)
     religion = fields.Many2one('op.religion', 'Religion')
     library_card = fields.Char('Library Card', size=64)
     emergency_contact = fields.Many2one(
@@ -60,6 +60,26 @@ class OpFaculty(models.Model):
         'op.health', 'faculty_id', 'Health Detail')
     faculty_subject_ids = fields.Many2many('op.subject', string='Subjects')
     emp_id = fields.Many2one('hr.employee', 'Employee')
+    category_ids = fields.Many2many('hr.employee.category', string='Tags')
+
+    @api.model
+    def create(self, vals):
+        res = super(OpFaculty, self).create(vals)
+        emp_obj = self.env['hr.employee']
+        categ_ids = []
+        if res:
+            for c in res.category_ids:
+                categ_ids.append(c.id)
+            vals = {
+                'name': res.name or '',
+                'country_id': res.nationality and res.nationality.id or False,
+                'gender': res.gender,
+                'work_email': res.email,
+                'category_ids': [(6,0,categ_ids)]
+            }
+            emp_id = emp_obj.create(vals)
+            self.write({'emp_id': emp_id.id})
+        return res
 
     @api.one
     def create_employee(self):

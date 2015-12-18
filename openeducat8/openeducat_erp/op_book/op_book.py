@@ -40,7 +40,7 @@ class OpBook(models.Model):
     movement_line = fields.One2many('op.book.movement', 'book_id', 'Movement')
     subject_ids = fields.Many2many(
         'op.subject', string='Subjects', required=True)
-    internal_code = fields.Char('Internal ID', size=64)
+    internal_code = fields.Char('Internal ID', size=128)
     queue_ids = fields.Many2many('op.book.queue', string='Book Queue')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

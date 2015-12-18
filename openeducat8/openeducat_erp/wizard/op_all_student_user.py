@@ -49,7 +49,7 @@ class WizardOpStudent(models.TransientModel):
             if not stud.user_id:
                 user_vals = {
                     'name': stud.name,
-                    'login': stud.name,
+                    'login': stud.email,
                     'partner_id': stud.partner_id.id
                 }
                 user_default.update(user_vals)

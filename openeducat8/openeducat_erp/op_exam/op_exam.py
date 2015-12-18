@@ -32,7 +32,7 @@ class OpExamSession(models.Model):
     batch_id = fields.Many2one('op.batch', 'Batch', required=True)
     standard_id = fields.Many2one('op.standard', 'Standard', required=True)
     division_id = fields.Many2one('op.division', 'Division')
-    exam_code = fields.Char('Exam Code', size=8, required=True)
+    exam_code = fields.Char('Exam Code', size=128, required=True)
     start_time = fields.Datetime('Start Time', required=True)
     end_time = fields.Datetime('End Time', required=True)
     room_id = fields.Many2one('op.exam.room', 'Room', required=True)
@@ -51,7 +51,7 @@ class OpExam(models.Model):
     session_id = fields.Many2one('op.exam.session', 'Exam Session')
     subject_id = fields.Many2one('op.subject', 'Subject', required=True)
     division_id = fields.Many2one('op.division', 'Division')
-    exam_code = fields.Char('Exam Code', size=8, required=True)
+    exam_code = fields.Char('Exam Code', size=128, required=True)
     exam_type = fields.Many2one('op.exam.type', 'Exam Type', required=True)
     evaluation_type = fields.Selection(
         [('normal', 'Normal'), ('GPA', 'GPA'), ('CWA', 'CWA'), ('CCE', 'CCE')],

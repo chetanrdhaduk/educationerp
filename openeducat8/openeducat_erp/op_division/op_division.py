@@ -25,7 +25,7 @@ from openerp import models, fields
 class OpDivision(models.Model):
     _name = 'op.division'
 
-    code = fields.Char('Code', size=8, required=True)
+    code = fields.Char('Code', size=128, required=True)
     name = fields.Char('Name', size=32, required=True)
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -26,7 +26,7 @@ class OpStandard(models.Model):
     _name = 'op.standard'
     _order = 'sequence'
 
-    code = fields.Char('Code', size=8, required=True)
+    code = fields.Char('Code', size=128, required=True)
     name = fields.Char('Name', size=32, required=True)
     course_id = fields.Many2one('op.course', 'Course', required=True)
     payment_term = fields.Many2one('account.payment.term', 'Payment Term')

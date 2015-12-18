@@ -18,7 +18,7 @@
 					<field name="course_id" />
 					<field name="batch_id" />
 					<field name="state" />
-					<field name="category_id" />
+					<!-- <field name="category_id" /> -->
 					<field name="standard_id" />
 				</tree>
 			</field>
@@ -80,7 +80,7 @@
 									<field name="batch_id" domain="[('course_id', '=', course_id)]" />
 									<field name="standard_id" domain="[('course_id', '=', course_id)]" />
 									<field name="fees" />
-									<field name="category_id" />
+									<!-- <field name="category_id" /> -->
 									<field name="due_date" />
 									<field name="student_id" invisible="1" />
 								</group>
@@ -142,7 +142,7 @@
 					<field name="birth_date" />
 					<field name="course_id" />
 					<field name="batch_id" />
-					<field name="category_id" />
+					<!-- <field name="category_id" /> -->
 					<field name="standard_id" />
 					<newline />
 					<group expand="0" string="Group By...">
@@ -157,8 +157,10 @@
 						<filter string="Course" domain="[]" context="{'group_by':'course_id'}" />
 						<filter string="Batch" domain="[]" context="{'group_by':'batch_id'}" />
 						<filter string="Status" domain="[]" context="{'group_by':'state'}" />
+						<!--
 						<filter string="Category" domain="[]"
 							context="{'group_by':'category_id'}" />
+						-->
 						<filter string="Standard" domain="[]"
 							context="{'group_by':'standard_id'}" />
 					</group>

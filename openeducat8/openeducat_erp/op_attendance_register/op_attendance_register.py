@@ -26,7 +26,7 @@ class OpAttendanceRegister(models.Model):
     _name = 'op.attendance.register'
 
     name = fields.Char('Name', size=16, required=True)
-    code = fields.Char('Code', size=8, required=True)
+    code = fields.Char('Code', size=128, required=True)
     course_id = fields.Many2one('op.course', 'Course', required=True)
     batch_id = fields.Many2one('op.batch', 'Batch', required=True)
     standard_id = fields.Many2one('op.standard', 'Standard', required=True)

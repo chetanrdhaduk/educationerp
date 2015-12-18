@@ -26,7 +26,7 @@ class OpRoute(models.Model):
     _name = 'op.route'
 
     name = fields.Char('Name', size=16, required=True)
-    code = fields.Char('Code', size=8, required=True)
+    code = fields.Char('Code', size=128, required=True)
     cost = fields.Float('Cost')
     parent_route = fields.Many2one('op.route', 'Parent Route')
 

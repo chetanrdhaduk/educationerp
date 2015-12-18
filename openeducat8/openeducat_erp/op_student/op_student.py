@@ -39,8 +39,8 @@ class OpStudent(models.Model):
                 seq = roll_number.standard_id.sequence
         self.roll_number = roll_no
 
-    middle_name = fields.Char('Middle Name', size=128, required=True)
-    last_name = fields.Char('Middle Name', size=128, required=True)
+    middle_name = fields.Char('Middle Name', size=128)
+    last_name = fields.Char('Middle Name', size=128)
     birth_date = fields.Date('Birth Date', required=True)
     blood_group = fields.Selection(
         [('A+', 'A+ve'), ('B+', 'B+ve'), ('O+', 'O+ve'), ('AB+', 'AB+ve'),
@@ -51,8 +51,8 @@ class OpStudent(models.Model):
          ('o', 'Other')], 'Gender', required=True)
     nationality = fields.Many2one('res.country', 'Nationality')
     language = fields.Many2one('res.lang', 'Mother Tongue')
-    category = fields.Many2one(
-        'op.category', 'Category', required=True)
+#     category = fields.Many2one(
+#         'op.category', 'Category', required=True)
     religion = fields.Many2one('op.religion', 'Religion')
     library_card = fields.Char('Library Card', size=64)
     emergency_contact = fields.Many2one(
@@ -71,6 +71,8 @@ class OpStudent(models.Model):
         'op.roll.number', 'student_id', 'Roll Number')
     partner_id = fields.Many2one(
         'res.partner', 'Partner', required=True, ondelete="cascade")
+#     emp_id = fields.Many2one(
+#         'hr.employee', 'Employee', required=True, ondelete="cascade")
     health_lines = fields.One2many('op.health', 'student_id', 'Health Detail')
     roll_number = fields.Char(
         'Current Roll Number', compute='_get_curr_roll_number',
@@ -80,7 +82,7 @@ class OpStudent(models.Model):
     passing_year = fields.Many2one('op.batch', 'Passing Year')
     current_position = fields.Char('Current Position', size=256)
     current_job = fields.Char('Current Job', size=256)
-    email = fields.Char('Email', size=128)
+#     email = fields.Char('Email', size=128)
     phone = fields.Char('Phone Number', size=256)
     user_id = fields.Many2one('res.users', 'User')
     placement_line = fields.One2many(
@@ -90,6 +92,24 @@ class OpStudent(models.Model):
     parent_ids = fields.Many2many('op.parent', string='Parent')
     gr_no = fields.Char("GR Number", size=20)
     invoice_exists = fields.Boolean('Invoice')
+
+#     def unlink(self, cr, uid, ids, context=None):
+#         unlink_emp_tmpl_ids = []
+#         for data in self.browse(cr, uid, ids, context=context):
+#             # Check if product still exists, in case it has been unlinked by unlinking its template
+#             if not data.exists():
+#                 continue
+#             tmpl_id = data.emp_id.id
+#             # Check if the product is last product of this template
+#             other_data_ids = self.search(cr, uid, [('emp_id', '=', tmpl_id), ('id', '!=', data.id)], context=context)
+#             if not other_data_ids:
+#                 unlink_emp_tmpl_ids.append(tmpl_id)
+#         res = super(OpStudent, self).unlink(cr, uid, ids, context=context)
+#         # delete templates after calling super, as deleting template could lead to deleting
+#         # products due to ondelete='cascade'
+#         self.pool.get('hr.employee').unlink(cr, uid, unlink_emp_tmpl_ids, context=context)
+#         return res
+
 
     @api.multi
     def create_invoice(self):

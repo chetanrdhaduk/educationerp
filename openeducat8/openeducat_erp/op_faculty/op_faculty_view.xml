@@ -19,12 +19,14 @@
 									<h4>
 										<a type="open">
 											<field name="name" />
+											<!--
 											<t t-if="record.middle_name.raw_value">
 												<field name="middle_name" />
 											</t>
 											<t t-if="record.last_name.raw_value">
 												<field name="last_name" />
 											</t>
+											-->
 										</a>
 									</h4>
 									<ul>
@@ -48,10 +50,12 @@
 												<field name="email" />
 											</a>
 										</li>
+										<!--
 										<li t-if="record.category.raw_value">
 											Category:
 											<field name="category" />
 										</li>
+										-->
 										<li t-if="record.language.raw_value">
 											Language:
 											<field name="language" />
@@ -76,10 +80,12 @@
 				<tree string="Faculty">
 					<field name="title" />
 					<field name="name" />
+					<!--
 					<field name="middle_name" />
 					<field name="last_name" />
+					-->
 					<field name="blood_group" />
-					<field name="category" />
+					<!-- <field name="category" /> -->
 					<field name="emergency_contact" />
 <!-- 					<field name="id_number" /> -->
 				</tree>
@@ -91,9 +97,11 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Faculty" version="7.0">
+				<!--
 				<header>
 					<button name="create_employee" string="Create Employee" groups="base.group_user" type="object"/>
 				</header>
+				-->
 					<sheet>
 						<field name="photo" widget="image" class="oe_left oe_avatar" />
 						<div class="oe_title">
@@ -102,12 +110,15 @@
 							</h1>
 							<h1><table>
 								<tr>
-								<td><field name="name" placeholder="First Name" style="padding-right:10px" /></td>
+								<td><field name="name" placeholder="First Name" style="padding-right:25px" /></td>
+								<!--
 								<td><field name="middle_name" placeholder="Middle Name" style="padding-right:10px" /></td>
 								<td><field name="last_name" placeholder="Last Name" style="padding-right:10px" /></td>
+								-->
 								</tr>
 								</table>
 							</h1>
+							<field name="category_ids" widget="many2many_tags" />
 						</div>
 						<separator colspan="4" string="Basic Information" />
 						<group colspan="4" col="8">
@@ -134,7 +145,7 @@
 									<field name="religion" />
 									<field name="emergency_contact" context="{'show_address': 1}"
 										options='{"always_reload": True}' />
-									<field name="category" />
+									<!-- <field name="category" /> -->
 									<field name="visa_info" />
 									<field name='emp_id' />
 								</group>
@@ -205,7 +216,7 @@
 				<search string="Faculty">
 					<field name="name" />
 					<field name="blood_group" />
-					<field name="category" />
+					<!-- <field name="category" /> -->
 <!-- 					<field name="id_number" /> -->
 					<newline />
 					<group expand="0" string="Group By...">
@@ -214,7 +225,7 @@
 						<filter string="Nationality" domain="[]"
 							context="{'group_by':'nationality'}" />
 						<filter string="Language" domain="[]" context="{'group_by':'language'}" />
-						<filter string="Category" domain="[]" context="{'group_by':'category'}" />
+						<!-- <filter string="Category" domain="[]" context="{'group_by':'category'}" /> -->
 						<filter string="Religion" domain="[]" context="{'group_by':'religion'}" />
 					</group>
 				</search>
