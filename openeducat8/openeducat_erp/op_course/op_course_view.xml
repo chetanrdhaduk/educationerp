@@ -6,7 +6,7 @@
 			<field name="model">op.course</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Course">
+				<tree string="College">
 					<field name="name" />
 					<field name="code" />
 					<field name="section" />
@@ -23,9 +23,9 @@
 			<field name="model">op.course</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Course" version="7.0">
+				<form string="College" version="7.0">
 					<sheet>
-						<separator colspan="4" string="Course Detail" />
+						<separator colspan="4" string="College Detail" />
 						<group colspan="4">
 							<field name="name" />
 							<field name="code" />

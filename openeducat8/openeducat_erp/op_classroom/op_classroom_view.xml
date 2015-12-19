@@ -10,7 +10,7 @@
 					<field name="name" />
 					<field name="code" />
 					<field name="capacity" />
-					<field name="facility" />
+					<!-- <field name="facility" /> -->
 				</tree>
 			</field>
 		</record>
@@ -29,12 +29,12 @@
 							<field name="standard_id" />
 							<field name="capacity" />
 						</group>
-						<notebook>	
+						<!--
+						<notebook>
 							<page string="Facilities">
 								<separator string="Facilities" />
 								<field name="facility" colspan="4" nolabel="1" />
 							</page>
-							<!--
 							<page string="Asset Management">
 								<separator string="Asset Management" />
 								<field name="asset_line" colspan="4" nolabel="1" >
@@ -45,9 +45,8 @@
 									</tree>
 								</field>
 							</page>
-							-->
 						</notebook>
-						
+						-->
 					</sheet>
 				</form>
 			</field>
@@ -61,7 +60,7 @@
 					<field name="name" />
 					<field name="code" />
 					<field name="capacity" />
-					<field name="facility" />
+					<!-- <field name="facility" /> -->
 					<newline />
 					<group expand="0" string="Group By...">
 						<filter string="Name" domain="[]" context="{'group_by':'name'}" />

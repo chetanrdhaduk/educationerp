@@ -111,9 +111,9 @@
 		<menuitem id="menu_op_school_config_root" name="Configuration" />
 		<menuitem id="menu_op_school_config" name="Configuration" parent="menu_op_school_config_root"/>
 		
-		<menuitem id="menu_op_school_config_course" name="Course Management" parent="menu_op_school_config"/>
+		<menuitem id="menu_op_school_config_course" name="College Management" parent="menu_op_school_config"/>
 		
-		<menuitem id="menu_op_course_sub" name="Courses"
+		<menuitem id="menu_op_course_sub" name="College"
 			parent="menu_op_school_config_course" sequence="20"
 			action="act_open_op_course_view" groups="group_op_back_office,group_op_back_office_admin" />
 		<menuitem id="menu_op_batch_sub" name="Batches"

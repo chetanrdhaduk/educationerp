@@ -1097,7 +1097,7 @@ msgstr "Chi tiết Khóa học"
 
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_school_config_course
-msgid "Course Management"
+msgid "College Management"
 msgstr "Quản lý Khóa học"
 
 #. module: openeducat_erp
@@ -1113,7 +1113,7 @@ msgstr "Khóa học:"
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_course_sub
 #: view:op.book:openeducat_erp.view_op_book_form
-msgid "Courses"
+msgid "College"
 msgstr "Khóa học"
 
 #. module: openeducat_erp

@@ -145,7 +145,7 @@
         'views/report_time_table_teacher_generate.xml',
         'views/generate_timetable_student.xml',
         'views/openeducat_template.xml',
-        'views/homepage_template.xml',
+#         'views/homepage_template.xml',
 
     ],
     'demo': [

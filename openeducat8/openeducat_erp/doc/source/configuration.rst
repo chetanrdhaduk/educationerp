@@ -7,11 +7,11 @@ Configuration Your System
 .. toctree::
    :maxdepth: 1
 
-Course Management
+College Management
 =================
 
 
-**1.** Course Management.
+**1.** College Management.
 
 
 	.. image:: _images/1.png

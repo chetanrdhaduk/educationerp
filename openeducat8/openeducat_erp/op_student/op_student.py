@@ -92,6 +92,7 @@ class OpStudent(models.Model):
     parent_ids = fields.Many2many('op.parent', string='Parent')
     gr_no = fields.Char("GR Number", size=20)
     invoice_exists = fields.Boolean('Invoice')
+    relative_ids = fields.One2many('student.relative', 'stud_id', string='Relatives')
 
 #     def unlink(self, cr, uid, ids, context=None):
 #         unlink_emp_tmpl_ids = []
@@ -179,5 +180,12 @@ class OpStudent(models.Model):
             result['res_id'] = inv_ids and inv_ids[0] or False
         return result
 
+
+class student_relative(models.Model):
+    _name = 'student.relative'
+
+    student_id = fields.Many2one('op.student', string='Student')
+    comment = fields.Char('Comment', size=512)
+    stud_id = fields.Many2one('op.student', string='Student')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

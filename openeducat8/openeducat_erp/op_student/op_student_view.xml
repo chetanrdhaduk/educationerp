@@ -243,6 +243,14 @@
 								<separator string="Health Detail" colspan="4" />
 								<field name="health_lines" colspan="4" nolabel="1" />
 							</page>
+							<page string="Relatives">
+                                <field name="relative_ids">
+                                    <tree editable="top">
+                                        <field name="student_id" />
+                                        <field name="comment" />
+                                    </tree>
+                                </field>
+                            </page>
 						</notebook>
 					</sheet>
 				</form>

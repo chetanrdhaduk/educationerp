@@ -1095,7 +1095,7 @@ msgstr ""
 
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_school_config_course
-msgid "Course Management"
+msgid "College Management"
 msgstr ""
 
 #. module: openeducat_erp
@@ -1111,7 +1111,7 @@ msgstr ""
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_course_sub
 #: view:op.book:openeducat_erp.view_op_book_form
-msgid "Courses"
+msgid "College"
 msgstr ""
 
 #. module: openeducat_erp

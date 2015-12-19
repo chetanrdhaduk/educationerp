@@ -53,7 +53,7 @@ class OpAdmission(models.Model):
     birth_date = fields.Date(
         'Birth Date', required=True, states={'done': [('readonly', True)]})
     course_id = fields.Many2one(
-        'op.course', 'Course', required=True,
+        'op.course', 'College', required=True,
         states={'done': [('readonly', True)]})
     batch_id = fields.Many2one(
         'op.batch', 'Batch', required=True,
@@ -84,7 +84,7 @@ class OpAdmission(models.Model):
     prev_institute = fields.Char(
         'Previous Institute', size=256, states={'done': [('readonly', True)]})
     prev_course = fields.Char(
-        'Previous Course', size=256, states={'done': [('readonly', True)]})
+        'Previous College', size=256, states={'done': [('readonly', True)]})
     prev_result = fields.Char(
         'Previous Result', size=256, states={'done': [('readonly', True)]})
     family_business = fields.Char(

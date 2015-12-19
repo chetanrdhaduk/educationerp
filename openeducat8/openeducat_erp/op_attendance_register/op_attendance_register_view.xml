@@ -54,7 +54,7 @@
 					<group expand="0" string="Group By...">
 						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
 						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
-						<filter string="Course" domain="[]" context="{'group_by':'course_id'}" />
+						<filter string="College" domain="[]" context="{'group_by':'course_id'}" />
 						<filter string="Batch" domain="[]" context="{'group_by':'batch_id'}" />
 						<filter string="Standard" domain="[]"
 							context="{'group_by':'standard_id'}" />

@@ -1065,7 +1065,7 @@ msgstr "Kurs-Detail"
 
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_school_config_course
-msgid "Course Management"
+msgid "College Management"
 msgstr "Kursleitung"
 
 #. module: openeducat_erp
@@ -1082,7 +1082,7 @@ msgstr "Kurs:"
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_course_sub
 #: view:op.book:openeducat_erp.view_op_book_form
-msgid "Courses"
+msgid "College"
 msgstr "Kurse"
 
 #. module: openeducat_erp

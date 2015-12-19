@@ -26,7 +26,7 @@ class OpAllocatDivision(models.Model):
     _name = 'op.allocat.division'
 
     name = fields.Char('Name', size=128, required=True)
-    course_id = fields.Many2one('op.course', 'Course', required=True)
+    course_id = fields.Many2one('op.course', 'College', required=True)
     standard_id = fields.Many2one('op.standard', 'Standard', required=True)
     division_id = fields.Many2one('op.division', 'Division', required=True)
     student_ids = fields.Many2many('op.student', string='Student(s)')

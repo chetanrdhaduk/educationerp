@@ -50,7 +50,7 @@
 						<filter string="Start Date" domain="[]"
 							context="{'group_by':'start_date'}" />
 						<filter string="End Date" domain="[]" context="{'group_by':'end_date'}" />
-						<filter string="Course" domain="[]" context="{'group_by':'course_id'}" />
+						<filter string="College" domain="[]" context="{'group_by':'course_id'}" />
 					</group>
 				</search>
 			</field>

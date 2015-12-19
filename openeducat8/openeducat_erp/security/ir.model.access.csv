@@ -19,26 +19,14 @@
 "access_account_journal_period_backoffice","name_account_journal_period_backoffice","account.model_account_journal_period","group_op_back_office",1,1,1,0
 "access_account_analytic_line_backoffice_admin","name_account_analytic_line_backoffice_admin","analytic.model_account_analytic_line","group_op_back_office_admin",1,1,1,0
 "access_account_analytic_line_backoffice","name_account_analytic_line_backoffice","analytic.model_account_analytic_line","group_op_back_office",1,1,1,0
-"access_op_route","name_op_route","model_op_route","base.group_user",1,1,1,0
 "access_op_admission","name_op_admission","model_op_admission","base.group_user",1,1,1,0
-"access_op_hostel_room","name_op_hostel_room","model_op_hostel_room","base.group_user",1,1,1,0
-"access_op_hostel_room_back_office","name_op_hostel_room_back_office","model_op_hostel_room","group_op_back_office",1,0,0,0
 "access_op_marksheet_register","name_op_marksheet_register","model_op_marksheet_register","base.group_user",1,1,1,0
 "access_op_pass_status","name_op_pass_status","model_op_pass_status","base.group_user",1,1,1,0
 "access_op_attendance_line","name_op_attendance_line","model_op_attendance_line","base.group_user",1,1,1,0
 "access_op_classroom","name_op_classroom","model_op_classroom","base.group_user",1,1,1,0
 "access_op_classroom_back_office","name_op_classroom_back_office","model_op_classroom","group_op_back_office",1,0,0,0
-"access_op_vehicle","name_op_vehicle","model_op_vehicle","base.group_user",1,1,1,0
-"access_op_vehicle_back_office","name_op_vehicle_back_office","model_op_vehicle","group_op_back_office",1,0,0,0
-"access_op_hostel","name_op_hostel","model_op_hostel","base.group_user",1,1,1,0
-"access_op_hostel_back_office","name_op_hostel_back_office","model_op_hostel","group_op_back_office",1,0,0,0
-"access_op_facility","name_op_facility","model_op_facility","base.group_user",1,1,1,0
-"access_op_facility_back_office","name_op_facility_back_office","model_op_facility","group_op_back_office",1,0,0,0
 "access_op_period","name_op_period","model_op_period","base.group_user",1,1,1,0
 "access_op_assignment_sub_history","name_op_assignment_sub_history","model_op_assignment_sub_history","base.group_user",1,1,1,0
-"access_op_achievement","name_op_achievement","model_op_achievement","base.group_user",1,1,1,0
-"access_op_achievement_type","name_op_achievement_type","model_op_achievement_type","base.group_user",1,1,1,0
-"access_op_achievement_type_back_office","name_op_achievement_type_back_office","model_op_achievement_type","group_op_back_office",1,0,0,0
 "access_op_health_line","name_op_health_line","model_op_health_line","base.group_user",1,1,1,0
 "access_op_exam_res_allocation","name_op_exam_res_allocation","model_op_exam_res_allocation","base.group_user",1,1,1,0
 "access_op_scholarship","name_op_scholarship","model_op_scholarship","base.group_user",1,1,1,0
@@ -106,19 +94,6 @@
 "access_op_parent_back_office","name_op_parent_student_back_office","model_op_parent","group_op_back_office",1,1,1,1
 "access_op_parent_back_office_admin","name_op_parent_student_back_office_admin","model_op_parent","group_op_back_office_admin",1,1,1,1
 
-"access_op_activity_student","name_op_activity_student","model_op_activity","group_op_student",1,0,0,0
-"access_op_activity_faculty","name_op_activity_student_faculty","model_op_activity","group_op_faculty",1,0,0,0
-"access_op_activity_parent","name_op_activity_student_parent","model_op_activity","group_op_parent",1,0,0,0
-"access_op_activity_back_office","name_op_activity_student_back_office","model_op_activity","group_op_back_office",1,0,0,0
-"access_op_activity_back_office_admin","name_op_activity_student_back_office_admin","model_op_activity","group_op_back_office_admin",1,1,1,1
-
-"access_op_activity_type_student","name_op_activity_type_student","model_op_activity_type","group_op_student",1,0,0,0
-"access_op_activity_type_faculty","name_op_activity_type_faculty","model_op_activity_type","group_op_faculty",1,0,0,0
-"access_op_activity_type_parent","name_op_activity_type_parent","model_op_activity_type","group_op_parent",1,0,0,0
-"access_op_activity_type_library","name_op_activity_type_library","model_op_activity_type","group_op_library",1,0,0,0
-"access_op_activity_type_back_office","name_op_activity_type_back_office","model_op_activity_type","group_op_back_office",1,0,0,0
-"access_op_activity_type_back_office_admin","name_op_activity_type_back_office_admin","model_op_activity_type","group_op_back_office_admin",1,1,1,1
-
 "access_op_timetable_faculty","name_op_timetable_faculty","model_op_timetable","group_op_faculty",1,0,0,0
 "access_op_timetable_student","name_op_timetable_student","model_op_timetable","group_op_student",1,0,0,0
 "access_op_timetable_parent","name_op_timetable_parent","model_op_timetable","group_op_parent",1,0,0,0
@@ -142,12 +117,6 @@
 "access_op_batch_parent","name_op_batch_parent","model_op_batch","group_op_parent",1,0,0,0
 "access_op_batch_back_office","name_op_batch_back_office","model_op_batch","group_op_back_office",1,0,0,0
 "access_op_batch_back_office_admin","name_op_batch_back_office_admin","model_op_batch","group_op_back_office_admin",1,1,1,1
-
-"access_op_category_faculty","name_op_category_faculty","model_op_category","group_op_faculty",1,0,0,0
-"access_op_category_student","name_op_category_student","model_op_category","group_op_student",1,0,0,0
-"access_op_category_parent","name_op_category_parent","model_op_category","group_op_parent",1,0,0,0
-"access_op_category_back_office","name_op_category_back_office","model_op_category","group_op_back_office",1,0,0,0
-"access_op_category_back_office_admin","name_op_category_back_office_admin","model_op_category","group_op_back_office_admin",1,1,1,1
 
 "access_op_exam_room_faculty","name_op_exam_room_faculty","model_op_exam_room","group_op_faculty",1,0,0,0
 "access_op_exam_room_student","name_op_exam_room_student","model_op_exam_room","group_op_student",1,0,0,0
@@ -181,11 +150,6 @@
 "access_op_result_exam_line_back_office","name_op_result_exam_line_back_office","model_op_result_exam_line","group_op_back_office",1,1,1,1
 "access_op_result_exam_line_back_office_admin","name_op_result_exam_line_back_office_admin","model_op_result_exam_line","group_op_back_office_admin",1,1,1,1
 
-"access_op_transportation_faculty","name_op_transportation_faculty","model_op_transportation","group_op_faculty",1,0,0,0
-"access_op_transportation_student","name_op_transportation_student","model_op_transportation","group_op_student",1,0,0,0
-"access_op_transportation_back_office","name_op_transportation_back_office","model_op_transportation","group_op_back_office",1,0,0,0
-"access_op_transportation_back_office_admin","name_op_transportation_back_office_admin","model_op_transportation","group_op_back_office_admin",1,1,1,1
-,,,,,,,
 "access_op_res_partner_faculty","name_op_res_partner_faculty","base.model_res_partner","group_op_faculty",1,0,0,0
 "access_op_res_partner_student","name_op_res_partner_student","base.model_res_partner","group_op_student",1,0,0,0
 ,,,,,,,
@@ -193,11 +157,6 @@
 "access_op_res_country_faculty","name_op_res_country_faculty","base.model_res_country","group_op_faculty",1,0,0,0
 "access_op_res_country_parent","name_op_res_country_parent","base.model_res_country","group_op_parent",1,0,0,0
 ,,,,,,,
-"access_op_stop_faculty","name_op_stop_faculty","model_op_stop","group_op_faculty",1,0,0,0
-"access_op_stop_student","name_op_stop_student","model_op_stop","group_op_student",1,0,0,0
-"access_op_stop_back_office","name_op_stop_back_office","model_op_stop","group_op_back_office",1,1,1,1
-"access_op_stop_back_office_admin","name_op_stop_back_office_admin","model_op_stop","group_op_back_office_admin",1,1,1,1
-
 "access_op_religion_faculty","name_op_religion_faculty","model_op_religion","group_op_faculty",1,0,0,0
 "access_op_religion_student","name_op_religion_student","model_op_religion","group_op_student",1,0,0,0
 "access_op_religion_back_office","name_op_religion_back_office","model_op_religion","group_op_back_office",1,0,0,0
@@ -295,7 +254,6 @@
 "access_op_exam_type_back_office","op_exam_type_back_office","model_op_exam_type","group_op_back_office",1,0,0,0
 "access_op_exam_type_back_office_admin","op_exam_type_back_office_admin","model_op_exam_type","group_op_back_office_admin",1,1,1,1
 
-"access_op_room","op_room","model_op_room",,1,1,1,1
 "access_op_asset","op_asset","model_op_asset",,1,1,1,1
 "access_op_allocat_division","op_allocat_division","model_op_allocat_division",,1,1,1,1
 

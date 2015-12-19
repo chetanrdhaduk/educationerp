@@ -1066,14 +1066,14 @@ msgstr "Course Detail"
 
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_school_config_course
-msgid "Course Management"
-msgstr "Course Management"
+msgid "College Management"
+msgstr "College Management"
 
 #. module: openeducat_erp
 #: field:op.exam.room,course_ids:0
 #, fuzzy
 msgid "Course(s)"
-msgstr "Courses"
+msgstr "College"
 
 #. module: openeducat_erp
 #: view:op.student:openeducat_erp.kanban_view_student
@@ -1083,8 +1083,8 @@ msgstr "Course:"
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_course_sub
 #: view:op.book:openeducat_erp.view_op_book_form
-msgid "Courses"
-msgstr "Courses"
+msgid "College"
+msgstr "College"
 
 #. module: openeducat_erp
 #: view:op.faculty:openeducat_erp.view_op_faculty_form

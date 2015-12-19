@@ -65,7 +65,7 @@
 							</page>
 							<page string="Education Details">
 								<group colspan="4">
-									<separator string="Courses" />
+									<separator string="College" />
 									<separator string="Subjects" />
 									<field name="course_ids" nolabel="1" widget="many2many_tags" />
 									<field name="subject_ids" nolabel="1" widget="many2many_tags" />

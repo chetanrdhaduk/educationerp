@@ -30,7 +30,7 @@ class OpClassroom(models.Model):
     course_id = fields.Many2one('op.course', 'Course')
     standard_id = fields.Many2one('op.standard', 'Standard')
     capacity = fields.Integer(string='No. Of Person')
-    facility = fields.Many2many('op.facility', string='Facilities')
+#     facility = fields.Many2many('op.facility', string='Facilities')
     asset_line = fields.One2many(
         'op.asset', 'asset_id', 'Asset', required=True)
 
