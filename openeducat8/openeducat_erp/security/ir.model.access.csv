@@ -29,9 +29,6 @@
 "access_op_assignment_sub_history","name_op_assignment_sub_history","model_op_assignment_sub_history","base.group_user",1,1,1,0
 "access_op_health_line","name_op_health_line","model_op_health_line","base.group_user",1,1,1,0
 "access_op_exam_res_allocation","name_op_exam_res_allocation","model_op_exam_res_allocation","base.group_user",1,1,1,0
-"access_op_scholarship","name_op_scholarship","model_op_scholarship","base.group_user",1,1,1,0
-"access_op_scholarship_back_office","name_op_scholarship_back_office","model_op_scholarship","group_op_back_office",1,0,0,0
-"access_op_scholarship_type","name_op_scholarship_type","model_op_scholarship_type","base.group_user",1,1,1,0
 "access_op_min_clear_criteria","name_op_min_clear_criteria","model_op_min_clear_criteria","base.group_user",1,1,1,0
 ,,,,,,,
 "access_op_book_student","name_op_book_student","model_op_book","group_op_student",1,1,0,0
@@ -82,12 +79,6 @@
 "access_op_book_queue_library","op_book_queue_library","model_op_book_queue","group_op_library",1,1,0,1
 "access_op_book_queue_back_office","name_op_book_queue_student_back_office","model_op_book_queue","group_op_back_office",1,1,1,1
 "access_op_book_queue_back_office_admin","name_op_book_queue_student_back_office_admin","model_op_book_queue","group_op_back_office_admin",1,1,1,1
-
-"access_op_roll_number_student","name_op_roll_number_student","model_op_roll_number","group_op_student",1,0,0,0
-"access_op_roll_number_faculty","name_op_roll_number_student_faculty","model_op_roll_number","group_op_faculty",1,0,0,0
-"access_op_roll_number_parent","name_op_roll_number_student_parent","model_op_roll_number","group_op_parent",1,0,0,
-"access_op_roll_number_back_office","name_op_roll_number_student_back_office","model_op_roll_number","group_op_back_office",1,0,0,0
-"access_op_roll_number_back_office_admin","name_op_roll_number_student_back_office_admin","model_op_roll_number","group_op_back_office_admin",1,1,1,1
 
 "access_op_parent_student","name_op_parent_student","model_op_parent","group_op_student",1,0,0,0
 "access_op_parent_faculty","name_op_parent_student_faculty","model_op_parent","group_op_faculty",1,0,0,0
@@ -157,10 +148,6 @@
 "access_op_res_country_faculty","name_op_res_country_faculty","base.model_res_country","group_op_faculty",1,0,0,0
 "access_op_res_country_parent","name_op_res_country_parent","base.model_res_country","group_op_parent",1,0,0,0
 ,,,,,,,
-"access_op_religion_faculty","name_op_religion_faculty","model_op_religion","group_op_faculty",1,0,0,0
-"access_op_religion_student","name_op_religion_student","model_op_religion","group_op_student",1,0,0,0
-"access_op_religion_back_office","name_op_religion_back_office","model_op_religion","group_op_back_office",1,0,0,0
-"access_op_religion_back_office_admin","name_op_religion_back_office_admin","model_op_religion","group_op_back_office_admin",1,1,1,1
 
 "access_op_course_faculty","name_op_course_faculty","model_op_course","group_op_faculty",1,0,0,0
 "access_op_course_student","name_op_course_student","model_op_course","group_op_student",1,0,0,0

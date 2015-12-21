@@ -9,8 +9,8 @@
 				<tree string="College">
 					<field name="name" />
 					<field name="code" />
+					<!--
 					<field name="section" />
-					<!-- 
 					<field name="evaluation_type" />
 					<field name="payment_term" />
 					-->

@@ -116,7 +116,7 @@
 									<field name="email" placeholder="Email" />
 								</div>
 								<group col="4" colspan="4">
-									<field name="religion_id" />
+									<!-- <field name="religion_id" /> -->
 									<field name="family_business" />
 									<field name="family_income" />
 									<field name="nbr" invisible="1"/>

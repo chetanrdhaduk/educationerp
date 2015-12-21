@@ -57,13 +57,13 @@ from . import op_marksheet_register
 from . import op_parent
 from . import op_placement_offer
 from . import op_publisher
-from . import op_religion
+# from . import op_religion
 from . import op_result_line
 from . import op_result_template
-from . import op_roll_number
+# from . import op_roll_number
 # from . import op_route
-from . import op_scholarship
-from . import op_scholarship_type
+# from . import op_scholarship
+# from . import op_scholarship_type
 from . import op_standard
 from . import op_student
 from . import op_subject

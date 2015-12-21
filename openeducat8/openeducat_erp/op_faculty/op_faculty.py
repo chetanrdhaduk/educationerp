@@ -41,7 +41,7 @@ class OpFaculty(models.Model):
     nationality = fields.Many2one('res.country', 'Nationality')
     language = fields.Many2one('res.lang', 'Language')
 #     category = fields.Many2one('op.category', 'Category', required=True)
-    religion = fields.Many2one('op.religion', 'Religion')
+#     religion = fields.Many2one('op.religion', 'Religion')
     library_card = fields.Char('Library Card', size=64)
     emergency_contact = fields.Many2one(
         'res.partner', 'Emergency Contact')
@@ -78,7 +78,7 @@ class OpFaculty(models.Model):
                 'category_ids': [(6,0,categ_ids)]
             }
             emp_id = emp_obj.create(vals)
-            self.write({'emp_id': emp_id.id})
+            res.write({'emp_id': emp_id.id})
         return res
 
     @api.one

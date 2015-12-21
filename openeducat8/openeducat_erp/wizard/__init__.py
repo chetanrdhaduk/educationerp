@@ -32,6 +32,6 @@ from . import student_attendance_report
 from . import student_hall_tickets_wizard
 from . import student_migrate
 from . import time_table_report
-
+from . import wizard_op_faculty
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

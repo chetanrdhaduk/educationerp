@@ -47,11 +47,11 @@
 											Division:
 											<field name="division_id" />
 										</li>
+										<!--
 										<li t-if="record.roll_number.raw_value">
 											Roll Number:
 											<field name="roll_number" />
 										</li>
-										<!--
 										<li t-if="record.category.raw_value">
 											Category:
 											<field name="category" />
@@ -76,7 +76,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Student">
-					<field name="roll_number" />
+					<!-- <field name="roll_number" /> -->
 					<field name="title" />
 					<field name="name" />
 					<!--
@@ -94,7 +94,7 @@
 					<field name="nationality" />
 					<field name="blood_group" />
 					<field name="language" />
-					<field name="religion" />
+					<!-- <field name="religion" /> -->
 				</tree>
 			</field>
 		</record>
@@ -120,7 +120,7 @@
 							</h1>
 							<h1><table>
 								<tr>
-								<td><field name="name" placeholder="First Name" style="padding-right:25px" /></td>
+								<td><field name="name" placeholder="Name" style="padding-right:30px" /></td>
 								<!--
 								<td><field name="middle_name" placeholder="Middle Name" style="padding-right:10px" /></td>
 								<td><field name="last_name" placeholder="Last Name" style="padding-right:10px" /></td>
@@ -133,8 +133,8 @@
 						<group col="6" colspan="4">
 							<field name="gender" />
 							<field name="birth_date" />
-							<!-- <field name="id_number" /> -->
-							<field name="roll_number" />
+							<!-- <field name="id_number" />
+							<field name="roll_number" /> -->
 							<field name="alumni_boolean" />
 							<field name="email" />
 						</group>
@@ -142,8 +142,8 @@
 							<page string="Details">
 								<separator colspan="4" string="Personal Detail" />
 								<group col="4" colspan="4">
-									<!-- <field name="category" /> -->
-									<field name="religion" />
+									<!-- <field name="category" />
+									<field name="religion" /> -->
 									<field name="nationality" />
 									<field name="language" />
 									<field name="blood_group" />
@@ -184,13 +184,15 @@
 									<field name="batch_id" />
 									<field name="division_id" />
 									<field name="gr_no" />
+									<!--
 									<field name="roll_number_line" colspan="4" nolabel="1"
 										context="{'default_course_id':course_id,
                                      'default_batch_id':batch_id,
                                      'default_standard_id':standard_id,
-                                     'default_division_id':division_id}" />
+                                     'default_division_id':division_id}" /> -->
 								</group>
 							</page>
+							<!--
 							<page string="Assignments">
 								<separator string="Assignment" colspan="4" />
 								<field name="allocation_ids" colspan="4" nolabel="1">
@@ -210,6 +212,7 @@
 									</tree>
 								</field>
 							</page>
+							-->
 							<page string="Library">
 								<separator string="Library Detail" colspan="4" />
 								<field name="library_card_ids" colspan="4" nolabel="1" />
@@ -221,15 +224,14 @@
 									<field name="passing_year" />
 									<field name="current_position" />
 									<field name="current_job" />
-									<field name="email" />
 									<field name="phone" string="Phone" />
 								</group>
 							</page>
+							<!--
 							<page string="Placement Offer">
 								<separator string="Placement Offer" colspan="4" />
 								<field name="placement_line" colspan="4" nolabel="1" />
 							</page>
-							<!--
 							<page string="Activity Log">
 								<separator string="Activity Log" colspan="4" />
 								<field name="activity_log" colspan="4" nolabel="1" />
@@ -242,11 +244,12 @@
 							<page string="Health Detail">
 								<separator string="Health Detail" colspan="4" />
 								<field name="health_lines" colspan="4" nolabel="1" />
+								<field name="id" invisible="1" />
 							</page>
 							<page string="Relatives">
                                 <field name="relative_ids">
                                     <tree editable="top">
-                                        <field name="student_id" />
+                                        <field name="student_id" domain="[('id','!=',parent.id)]" />
                                         <field name="comment" />
                                     </tree>
                                 </field>
@@ -276,8 +279,8 @@
 						<filter string="Nationality" domain="[]"
 							context="{'group_by':'nationality'}" />
 						<filter string="Language" domain="[]" context="{'group_by':'language'}" />
-						<!-- <filter string="Category" domain="[]" context="{'group_by':'category'}" /> -->
-						<filter string="Religion" domain="[]" context="{'group_by':'religion'}" />
+						<!-- <filter string="Category" domain="[]" context="{'group_by':'category'}" />
+						<filter string="Religion" domain="[]" context="{'group_by':'religion'}" /> -->
 						<filter string="Course" domain="[]" context="{'group_by':'course_id'}" />
 						<filter string="Batch" domain="[]" context="{'group_by':'batch_id'}" />
 						<filter string="Standard" domain="[]"

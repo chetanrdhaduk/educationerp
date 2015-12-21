@@ -91,8 +91,8 @@ class OpAdmission(models.Model):
         'Family Business', size=256, states={'done': [('readonly', True)]})
     family_income = fields.Float(
         'Family Income', states={'done': [('readonly', True)]})
-    religion_id = fields.Many2one(
-        'op.religion', 'Religion', states={'done': [('readonly', True)]})
+#     religion_id = fields.Many2one(
+#         'op.religion', 'Religion', states={'done': [('readonly', True)]})
 #     category_id = fields.Many2one(
 #         'op.category', 'Category', required=True,
 #         states={'done': [('readonly', True)]})
@@ -131,7 +131,7 @@ class OpAdmission(models.Model):
             'course_id': self.course_id and self.course_id.id or False,
             'batch_id': self.batch_id and self.batch_id.id or False,
             'standard_id': self.standard_id and self.standard_id.id or False,
-            'religion': self.religion_id and self.religion_id.id or False,
+#             'religion': self.religion_id and self.religion_id.id or False,
             'photo': self.photo or False,
             'gr_no': gr,
             'street': self.street or False,

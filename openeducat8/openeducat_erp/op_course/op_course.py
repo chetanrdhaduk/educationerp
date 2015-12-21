@@ -27,7 +27,7 @@ class OpCourse(models.Model):
 
     name = fields.Char('Name', size=32, required=True)
     code = fields.Char('Code', size=128, required=True)
-    section = fields.Char('Section', size=32, required=True)
+    section = fields.Char('Section', size=32)
     evaluation_type = fields.Selection(
         [('normal', 'Normal'), ('GPA', 'GPA'), ('CWA', 'CWA'), ('CCE', 'CCE')],
         'Evaluation Type')

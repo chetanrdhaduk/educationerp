@@ -26,18 +26,18 @@ class OpStudent(models.Model):
     _name = 'op.student'
     _inherits = {'res.partner': 'partner_id'}
 
-    @api.depends('roll_number_line', 'roll_number_line.roll_number',
-                 'roll_number_line.student_id', 'roll_number_line.standard_id',
-                 'roll_number_line.standard_id.sequence')
-    def _get_curr_roll_number(self):
-        #         for student in self:
-        roll_no = 0
-        seq = 0
-        for roll_number in self.roll_number_line:
-            if roll_number.standard_id.sequence > seq:
-                roll_no = roll_number.roll_number
-                seq = roll_number.standard_id.sequence
-        self.roll_number = roll_no
+#     @api.depends('roll_number_line', 'roll_number_line.roll_number',
+#                  'roll_number_line.student_id', 'roll_number_line.standard_id',
+#                  'roll_number_line.standard_id.sequence')
+#     def _get_curr_roll_number(self):
+#         #         for student in self:
+#         roll_no = 0
+#         seq = 0
+#         for roll_number in self.roll_number_line:
+#             if roll_number.standard_id.sequence > seq:
+#                 roll_no = roll_number.roll_number
+#                 seq = roll_number.standard_id.sequence
+#         self.roll_number = roll_no
 
     middle_name = fields.Char('Middle Name', size=128)
     last_name = fields.Char('Middle Name', size=128)
@@ -53,7 +53,7 @@ class OpStudent(models.Model):
     language = fields.Many2one('res.lang', 'Mother Tongue')
 #     category = fields.Many2one(
 #         'op.category', 'Category', required=True)
-    religion = fields.Many2one('op.religion', 'Religion')
+#     religion = fields.Many2one('op.religion', 'Religion')
     library_card = fields.Char('Library Card', size=64)
     emergency_contact = fields.Many2one(
         'res.partner', 'Emergency Contact')
@@ -67,16 +67,16 @@ class OpStudent(models.Model):
     batch_id = fields.Many2one('op.batch', 'Batch', required=True)
     standard_id = fields.Many2one(
         'op.standard', 'Standard', required=True)
-    roll_number_line = fields.One2many(
-        'op.roll.number', 'student_id', 'Roll Number')
+#     roll_number_line = fields.One2many(
+#         'op.roll.number', 'student_id', 'Roll Number')
     partner_id = fields.Many2one(
         'res.partner', 'Partner', required=True, ondelete="cascade")
 #     emp_id = fields.Many2one(
 #         'hr.employee', 'Employee', required=True, ondelete="cascade")
     health_lines = fields.One2many('op.health', 'student_id', 'Health Detail')
-    roll_number = fields.Char(
-        'Current Roll Number', compute='_get_curr_roll_number',
-        size=8, store=True)
+#     roll_number = fields.Char(
+#         'Current Roll Number', compute='_get_curr_roll_number',
+#         size=8, store=True)
     allocation_ids = fields.Many2many('op.assignment', string='Assignment')
     alumni_boolean = fields.Boolean('Alumni Student')
     passing_year = fields.Many2one('op.batch', 'Passing Year')

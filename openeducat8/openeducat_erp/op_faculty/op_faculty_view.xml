@@ -110,7 +110,7 @@
 							</h1>
 							<h1><table>
 								<tr>
-								<td><field name="name" placeholder="First Name" style="padding-right:25px" /></td>
+								<td><field name="name" placeholder="Name" style="padding-right:30px" /></td>
 								<!--
 								<td><field name="middle_name" placeholder="Middle Name" style="padding-right:10px" /></td>
 								<td><field name="last_name" placeholder="Last Name" style="padding-right:10px" /></td>
@@ -142,7 +142,7 @@
 									<field name="pan_card" />
 									<field name="language" />
 									<field name="bank_acc_num" />
-									<field name="religion" />
+									<!-- <field name="religion" /> -->
 									<field name="emergency_contact" context="{'show_address': 1}"
 										options='{"always_reload": True}' />
 									<!-- <field name="category" /> -->
@@ -225,8 +225,8 @@
 						<filter string="Nationality" domain="[]"
 							context="{'group_by':'nationality'}" />
 						<filter string="Language" domain="[]" context="{'group_by':'language'}" />
-						<!-- <filter string="Category" domain="[]" context="{'group_by':'category'}" /> -->
-						<filter string="Religion" domain="[]" context="{'group_by':'religion'}" />
+						<!-- <filter string="Category" domain="[]" context="{'group_by':'category'}" />
+						<filter string="Religion" domain="[]" context="{'group_by':'religion'}" /> -->
 					</group>
 				</search>
 			</field>
