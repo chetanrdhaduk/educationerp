@@ -1050,26 +1050,26 @@ msgstr "Country"
 #: field:op.timetable,course_id:0 field:student.migrate,course_id:0
 #: view:website:openeducat_erp.report_marksheet_report
 #: view:website:openeducat_erp.report_transportation_detail
-msgid "Course"
-msgstr "Course"
+msgid "College"
+msgstr "College"
 
 #. module: openeducat_erp
 #: view:website:openeducat_erp.report_admission_analysis
 #: view:website:openeducat_erp.report_exam_student_lable_report
 #: view:website:openeducat_erp.report_student_idcard
 #: view:website:openeducat_erp.report_ticket
-msgid "Course :"
-msgstr "Course :"
+msgid "College :"
+msgstr "College :"
 
 #. module: openeducat_erp
 #: view:op.admission:openeducat_erp.view_op_admission_graph
-msgid "Course By Admission"
-msgstr "Course By Admission"
+msgid "College By Admission"
+msgstr "College By Admission"
 
 #. module: openeducat_erp
 #: view:op.course:openeducat_erp.view_op_course_form
-msgid "Course Detail"
-msgstr "Course Detail"
+msgid "College Detail"
+msgstr "College Detail"
 
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_school_config_course
@@ -1084,8 +1084,8 @@ msgstr "College"
 
 #. module: openeducat_erp
 #: view:op.student:openeducat_erp.kanban_view_student
-msgid "Course:"
-msgstr "Course:"
+msgid "College:"
+msgstr "College:"
 
 #. module: openeducat_erp
 #: model:ir.ui.menu,name:openeducat_erp.menu_op_course_sub
@@ -1768,8 +1768,8 @@ msgstr "Finished"
 #: field:op.admission,name:0
 #: view:op.faculty:openeducat_erp.view_op_faculty_form
 #: view:op.student:openeducat_erp.view_op_student_form
-msgid "First Name"
-msgstr "First Name"
+msgid "Name"
+msgstr "Name"
 
 #. module: openeducat_erp
 #: view:student.migrate:openeducat_erp.student_migrate_form
@@ -3023,8 +3023,8 @@ msgstr "Present ?"
 
 #. module: openeducat_erp
 #: field:op.admission,prev_course:0
-msgid "Previous Course"
-msgstr "Previous Course"
+msgid "Previous College"
+msgstr "Previous College"
 
 #. module: openeducat_erp
 #: field:op.admission,prev_institute:0

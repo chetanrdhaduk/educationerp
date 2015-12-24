@@ -61,13 +61,14 @@ class OpFaculty(models.Model):
     faculty_subject_ids = fields.Many2many('op.subject', string='Subjects')
     emp_id = fields.Many2one('hr.employee', 'Employee')
     category_ids = fields.Many2many('hr.employee.category', string='Tags')
+    department_id = fields.Many2one('hr.department', string='Department')
 
     @api.model
     def create(self, vals):
         res = super(OpFaculty, self).create(vals)
         emp_obj = self.env['hr.employee']
         categ_ids = []
-        if res:
+        if res and not res.emp_id:
             for c in res.category_ids:
                 categ_ids.append(c.id)
             vals = {
@@ -75,7 +76,8 @@ class OpFaculty(models.Model):
                 'country_id': res.nationality and res.nationality.id or False,
                 'gender': res.gender,
                 'work_email': res.email,
-                'category_ids': [(6,0,categ_ids)]
+                'category_ids': [(6,0,categ_ids)],
+                'department_id': res.department_id and res.department_id.id or False
             }
             emp_id = emp_obj.create(vals)
             res.write({'emp_id': emp_id.id})

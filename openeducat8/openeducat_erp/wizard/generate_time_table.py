@@ -39,7 +39,7 @@ class GenerateTimeTable(models.TransientModel):
     _description = 'Generate Time Table'
     _rec_name = 'standard_id'
 
-    course_id = fields.Many2one('op.course', 'Course', required=True)
+    course_id = fields.Many2one('op.course', 'College', required=True)
     standard_id = fields.Many2one('op.standard', 'Standard', required=True)
     division_id = fields.Many2one('op.division', 'Division',  required=True)
     time_table_lines = fields.One2many(

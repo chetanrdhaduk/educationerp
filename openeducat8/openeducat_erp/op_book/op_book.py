@@ -36,7 +36,7 @@ class OpBook(models.Model):
     edition = fields.Text('Edition')
     publisher_ids = fields.Many2many(
         'op.publisher', string='Publisher', required=True)
-    course_ids = fields.Many2many('op.course', string='Course', required=True)
+    course_ids = fields.Many2many('op.course', string='College', required=True)
     movement_line = fields.One2many('op.book.movement', 'book_id', 'Movement')
     subject_ids = fields.Many2many(
         'op.subject', string='Subjects', required=True)

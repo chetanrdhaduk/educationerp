@@ -62,7 +62,7 @@ class OpStudent(models.Model):
     visa_info = fields.Char('Visa Info', size=64)
     id_number = fields.Char('ID Card Number', size=64)
     photo = fields.Binary('Photo')
-    course_id = fields.Many2one('op.course', 'Course', required=True)
+    course_id = fields.Many2one('op.course', 'College', required=True)
     division_id = fields.Many2one('op.division', 'Division')
     batch_id = fields.Many2one('op.batch', 'Batch', required=True)
     standard_id = fields.Many2one(
@@ -93,6 +93,10 @@ class OpStudent(models.Model):
     gr_no = fields.Char("GR Number", size=20)
     invoice_exists = fields.Boolean('Invoice')
     relative_ids = fields.One2many('student.relative', 'stud_id', string='Relatives')
+    index_number = fields.Char(
+        'Index Number', size=16, required=True, copy=False,
+        default=lambda self: self.env['ir.sequence'].get('op.student'))
+
 
 #     def unlink(self, cr, uid, ids, context=None):
 #         unlink_emp_tmpl_ids = []

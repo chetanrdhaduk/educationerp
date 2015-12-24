@@ -28,7 +28,7 @@ class StudentMigrate(models.TransientModel):
     _name = 'student.migrate'
 
     date = fields.Date('Date', required=True, default=fields.Date.today())
-    course_id = fields.Many2one('op.course', 'Course', required=True)
+    course_id = fields.Many2one('op.course', 'College', required=True)
     from_standard_id = fields.Many2one(
         'op.standard', 'From Standard', required=True)
     to_standard_id = fields.Many2one(

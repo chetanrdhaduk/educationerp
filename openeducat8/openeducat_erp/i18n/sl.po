@@ -1041,7 +1041,7 @@ msgstr "Država"
 #: field:op.timetable,course_id:0 field:student.migrate,course_id:0
 #: view:website:openeducat_erp.report_marksheet_report
 #: view:website:openeducat_erp.report_transportation_detail
-msgid "Course"
+msgid "College"
 msgstr "Študijski program"
 
 #. module: openeducat_erp
@@ -1049,17 +1049,17 @@ msgstr "Študijski program"
 #: view:website:openeducat_erp.report_exam_student_lable_report
 #: view:website:openeducat_erp.report_student_idcard
 #: view:website:openeducat_erp.report_ticket
-msgid "Course :"
+msgid "College :"
 msgstr "Študijski program:"
 
 #. module: openeducat_erp
 #: view:op.admission:openeducat_erp.view_op_admission_graph
-msgid "Course By Admission"
+msgid "College By Admission"
 msgstr "Študijski program po sprejetih"
 
 #. module: openeducat_erp
 #: view:op.course:openeducat_erp.view_op_course_form
-msgid "Course Detail"
+msgid "College Detail"
 msgstr "Podrobnosti o študijskem programu"
 
 #. module: openeducat_erp
@@ -1069,12 +1069,12 @@ msgstr "Upravljanje študijskih programov"
 
 #. module: openeducat_erp
 #: field:op.exam.room,course_ids:0
-msgid "Course(s)"
+msgid "College(s)"
 msgstr "Študijski programi"
 
 #. module: openeducat_erp
 #: view:op.student:openeducat_erp.kanban_view_student
-msgid "Course:"
+msgid "College:"
 msgstr "Študijski program:"
 
 #. module: openeducat_erp
@@ -1748,7 +1748,7 @@ msgstr "Zaključeno"
 #: field:op.admission,name:0
 #: view:op.faculty:openeducat_erp.view_op_faculty_form
 #: view:op.student:openeducat_erp.view_op_student_form
-msgid "First Name"
+msgid "Name"
 msgstr "Ime"
 
 #. module: openeducat_erp
@@ -2991,7 +2991,7 @@ msgstr "Prisoten ?"
 
 #. module: openeducat_erp
 #: field:op.admission,prev_course:0
-msgid "Previous Course"
+msgid "Previous College"
 msgstr "Prejšnji štud. program"
 
 #. module: openeducat_erp
@@ -4568,7 +4568,7 @@ msgstr "masa (kg)"
 #~ msgid "book.request.queue"
 #~ msgstr "book.request.queue"
 
-#~ msgid "Course     :"
+#~ msgid "College     :"
 #~ msgstr "Predmet:"
 
 #~ msgid "<field name=\"book_id\" placeholder=\"Book\" style=\"width: 100%\"/>"

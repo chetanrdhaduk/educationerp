@@ -29,7 +29,7 @@ class OpBookPurchase(models.Model):
     author_ids = fields.Char('Author', size=256)
     edition = fields.Text('Edition')
     publisher_ids = fields.Char('Publisher', size=256)
-    course_ids = fields.Many2one('op.course', 'Course', required=True)
+    course_ids = fields.Many2one('op.course', 'College', required=True)
     subject_ids = fields.Many2one('op.subject', 'Subject', required=True)
     student_id = fields.Many2one(
         'op.student', 'Student',

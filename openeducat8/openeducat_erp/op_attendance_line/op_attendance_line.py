@@ -31,7 +31,7 @@ class OpAttendanceLine(models.Model):
     student_id = fields.Many2one('op.student', 'Student', required=True)
     present = fields.Boolean('Present ?')
     course_id = fields.Many2one(
-        'op.course', 'Course', related='student_id.course_id', store=True,
+        'op.course', 'College', related='student_id.course_id', store=True,
         readonly=True)
     standard_id = fields.Many2one(
         'op.standard', 'Standard', related='student_id.standard_id',

@@ -21,7 +21,7 @@
 
 from . import admission_analysis_wizard
 from . import book_request_queue
-from . import exam_seating_arrangement
+# from . import exam_seating_arrangement
 from . import generate_roll_number
 from . import generate_time_table
 from . import issue_book
@@ -29,7 +29,7 @@ from . import op_all_student_user
 from . import op_all_student_wizard
 from . import return_book
 from . import student_attendance_report
-from . import student_hall_tickets_wizard
+# from . import student_hall_tickets_wizard
 from . import student_migrate
 from . import time_table_report
 from . import wizard_op_faculty

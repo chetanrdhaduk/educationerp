@@ -28,13 +28,13 @@ class OpAdmission(models.Model):
     _order = "application_number desc"
 
     name = fields.Char(
-        'First Name', size=128, required=True,
+        'Name', size=128, required=True,
         states={'done': [('readonly', True)]})
     middle_name = fields.Char(
-        'Middle Name', size=128, required=True,
+        'Middle Name', size=128,
         states={'done': [('readonly', True)]})
     last_name = fields.Char(
-        'Last Name', size=128, required=True,
+        'Last Name', size=128,
         states={'done': [('readonly', True)]})
     title = fields.Many2one(
         'res.partner.title', 'Title', states={'done': [('readonly', True)]})

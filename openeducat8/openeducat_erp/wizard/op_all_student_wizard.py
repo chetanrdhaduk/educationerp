@@ -26,7 +26,7 @@ class OpAllStudentWizard(models.TransientModel):
     _name = 'op.all.student'
 
     course_id = fields.Many2one(
-        'op.course', 'Course',
+        'op.course', 'College',
         default=lambda self: self.env['op.attendance.sheet'].browse(
             self.env.context['active_id']).register_id.course_id.id or False,
         readonly=True)

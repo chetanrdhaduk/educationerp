@@ -135,6 +135,7 @@
 							<field name="birth_date" />
 							<!-- <field name="id_number" />
 							<field name="roll_number" /> -->
+							<field name="index_number" />
 							<field name="alumni_boolean" />
 							<field name="email" />
 						</group>

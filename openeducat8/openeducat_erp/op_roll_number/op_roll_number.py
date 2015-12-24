@@ -27,7 +27,7 @@ class OpRollNumber(models.Model):
     _rec_name = 'roll_number'
 
     roll_number = fields.Char('Roll Number', size=8, required=True)
-    course_id = fields.Many2one('op.course', 'Course', required=True)
+    course_id = fields.Many2one('op.course', 'College', required=True)
     batch_id = fields.Many2one('op.batch', 'Batch', required=True)
     standard_id = fields.Many2one('op.standard', 'Standard', required=True)
     division_id = fields.Many2one('op.division', 'Division')

@@ -26,14 +26,13 @@ class OpAssignment(models.Model):
     _name = 'op.assignment'
 
     name = fields.Char('Name', size=16, required=True)
-    course_id = fields.Many2one('op.course', 'Course', required=True)
+    course_id = fields.Many2one('op.course', 'College', required=True)
     standard_id = fields.Many2one('op.standard', 'Standard', required=True)
     division_id = fields.Many2one('op.division', 'Division')
     subject_id = fields.Many2one('op.subject', 'Subject', required=True)
     faculty_id = fields.Many2one('op.faculty', 'Faculty', required=True)
     marks = fields.Float('Marks')
     description = fields.Text('Description', required=True)
-    type = fields.Many2one('op.exam.type', 'Type', required=True)
     state = fields.Selection(
         [('d', 'Draft'), ('p', 'Publish'), ('f', 'Finished')], 'State',
         required=True, default='d')

@@ -118,7 +118,8 @@
 								</tr>
 								</table>
 							</h1>
-							<field name="category_ids" widget="many2many_tags" />
+							<label for="category_ids" class="oe_edit_only" />
+							<field name="category_ids" widget="many2many_tags" placeholder="e.g. Part Time" />
 						</div>
 						<separator colspan="4" string="Basic Information" />
 						<group colspan="4" col="8">
@@ -148,6 +149,7 @@
 									<!-- <field name="category" /> -->
 									<field name="visa_info" />
 									<field name='emp_id' />
+									<field name="department_id" />
 								</group>
 								<field colspan="4" name="child_ids" nolabel="1" select="1"
 									height="260">

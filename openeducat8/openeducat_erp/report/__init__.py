@@ -21,14 +21,14 @@
 
 from . import admission_analysis_report
 from . import book_barcode
-from . import exam_student_lable
-from . import generate_exam_allocation
+# from . import exam_student_lable
+# from . import generate_exam_allocation
 from . import id_card
 from . import library_card
-from . import marksheet_report
+# from . import marksheet_report
 from . import student_attendance
 from . import student_bonafide_certificate
-from . import student_hall_ticket_report
+# from . import student_hall_ticket_report
 from . import time_table_report
 from . import time_table_teacher
 from . import transport_detail

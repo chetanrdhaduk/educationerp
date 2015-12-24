@@ -52,7 +52,7 @@ class OpTimetable(models.Model):
     period_id = fields.Many2one('op.period', 'Period', required=True)
     start_datetime = fields.Datetime('Start', required=True)
     end_datetime = fields.Datetime('End', required=True)
-    course_id = fields.Many2one('op.course', 'Course', required=False)
+    course_id = fields.Many2one('op.course', 'College', required=False)
     faculty_id = fields.Many2one('op.faculty', 'Faculty', required=True)
     standard_id = fields.Many2one('op.standard', 'Standard', required=True)
     division_id = fields.Many2one('op.division', 'Division', required=True)
