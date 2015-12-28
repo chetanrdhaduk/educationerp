@@ -110,6 +110,7 @@ class OpAdmission(models.Model):
     gr_no = fields.Boolean('Old Student??')
     gr_no_old = fields.Char('GR Number old', size=10)
     gr_no_new = fields.Char('GR Number new', size=10)
+    discount = fields.Float('Discount')
 
     @api.one
     def confirm_in_progress(self):

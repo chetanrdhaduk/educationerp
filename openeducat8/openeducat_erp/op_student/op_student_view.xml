@@ -138,6 +138,7 @@
 							<field name="index_number" />
 							<field name="alumni_boolean" />
 							<field name="email" />
+							<field name="discount" />
 						</group>
 						<notebook colspan="4">
 							<page string="Details">
@@ -181,8 +182,8 @@
 								<separator colspan="4" string="Educational Detail" />
 								<group col="4" colspan="4">
 									<field name="course_id" />
-									<field name="standard_id" />
-									<field name="batch_id" />
+									<field name="standard_id" domain="[('course_id','=',course_id)]" />
+									<field name="batch_id" domain="[('course_id','=',course_id)]" />
 									<field name="division_id" />
 									<field name="gr_no" />
 									<!--

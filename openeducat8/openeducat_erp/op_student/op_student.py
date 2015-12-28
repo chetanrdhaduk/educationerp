@@ -96,6 +96,7 @@ class OpStudent(models.Model):
     index_number = fields.Char(
         'Index Number', size=16, required=True, copy=False,
         default=lambda self: self.env['ir.sequence'].get('op.student'))
+    discount = fields.Float('Discount')
 
 
 #     def unlink(self, cr, uid, ids, context=None):

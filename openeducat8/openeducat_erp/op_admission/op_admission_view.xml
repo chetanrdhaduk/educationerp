@@ -78,6 +78,7 @@
 									<field name="fees" />
 									<!-- <field name="category_id" /> -->
 									<field name="due_date" />
+									<field name="discount" />
 									<field name="student_id" invisible="1" />
 								</group>
 							</page>

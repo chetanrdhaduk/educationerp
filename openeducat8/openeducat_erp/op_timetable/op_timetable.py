@@ -19,7 +19,8 @@
 #
 ###############################################################################
 
-from openerp import models, fields
+from openerp import models, fields, api, _
+from openerp.exceptions import ValidationError
 
 
 class OpPeriod(models.Model):
@@ -52,16 +53,27 @@ class OpTimetable(models.Model):
     period_id = fields.Many2one('op.period', 'Period', required=True)
     start_datetime = fields.Datetime('Start', required=True)
     end_datetime = fields.Datetime('End', required=True)
-    course_id = fields.Many2one('op.course', 'College', required=False)
+    course_id = fields.Many2one('op.course', 'College', required=True)
     faculty_id = fields.Many2one('op.faculty', 'Faculty', required=True)
     standard_id = fields.Many2one('op.standard', 'Standard', required=True)
-    division_id = fields.Many2one('op.division', 'Division', required=True)
+    division_id = fields.Many2one('op.division', 'Division')
     subject_id = fields.Many2one('op.subject', 'Subject', required=True)
     color = fields.Integer('Color Index')
+    classroom_id = fields.Many2one('op.classroom', 'Classroom', required=True)
+    subject_ids = fields.Many2many(string='Subjects', related='course_id.subject_ids')
     type = fields.Selection(
         [('Monday', 'Monday'), ('Tuesday', 'Tuesday'),
          ('Wednesday', 'Wednesday'), ('Thursday', 'Thursday'),
          ('Friday', 'Friday'), ('Saturday', 'Saturday')], 'Days')
 
+    @api.constrains('classroom_id', 'period_id')
+    def _check_classroom_period(self):
+        all_tt_ids = self.search([])
+        for a in all_tt_ids:
+            if a.id == self.id:
+                return True
+            if self.classroom_id.id == a.classroom_id.id and self.period_id.id == a.period_id.id:
+                raise ValidationError(
+                    _("Can't creat time table for same classroom & period."))
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

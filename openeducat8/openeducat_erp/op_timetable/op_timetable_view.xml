@@ -100,14 +100,16 @@
 			<field name="arch" type="xml">
 				<form string="Time Table" version="7.0">
 					<sheet>
+					    <field name="subject_ids" invisible="1" />
 						<separator colspan="4" string="Time Table" />
 						<group colspan="4" col="4">
-							<field name="faculty_id" />
-							<field name="standard_id" />
+						    <field name="course_id"/>
+							<field name="standard_id" domain="[('course_id','=',course_id)]" />
+							<field name="subject_id" domain="[('id','in',subject_ids[0][2] or False)]" />
 							<field name="division_id" />
+							<field name="classroom_id" domain="[('course_id','=',course_id), ('standard_id','=',standard_id)]" />
 							<field name="period_id" />
-							<field name="course_id"/>
-							<field name="subject_id" />
+							<field name="faculty_id" />
 							<field name="start_datetime" />
 							<field name="end_datetime" />
 							<field name="type"/>
