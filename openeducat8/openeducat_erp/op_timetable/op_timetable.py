@@ -59,7 +59,7 @@ class OpTimetable(models.Model):
     division_id = fields.Many2one('op.division', 'Division')
     subject_id = fields.Many2one('op.subject', 'Subject', required=True)
     color = fields.Integer('Color Index')
-    classroom_id = fields.Many2one('op.classroom', 'Classroom', required=True)
+    classroom_id = fields.Many2one('op.classroom', 'Classroom')
     subject_ids = fields.Many2many(string='Subjects', related='course_id.subject_ids')
     type = fields.Selection(
         [('Monday', 'Monday'), ('Tuesday', 'Tuesday'),
