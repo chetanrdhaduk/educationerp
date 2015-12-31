@@ -74,7 +74,7 @@ class OpAdmission(models.Model):
         'res.country.state', 'States', states={'done': [('readonly', True)]})
     country_id = fields.Many2one(
         'res.country', 'Country', states={'done': [('readonly', True)]})
-    fees = fields.Float('Fees', states={'done': [('readonly', True)]})
+    fees = fields.Integer('Fees', states={'done': [('readonly', True)]})
     photo = fields.Binary('Photo', states={'done': [('readonly', True)]})
     state = fields.Selection(
         [('d', 'Draft'), ('i', 'Confirm'), ('s', 'Enroll'), ('done', 'Done'),

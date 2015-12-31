@@ -155,6 +155,7 @@
 									<field name="user_id" />
 									<field name="emergency_contact" context="{'show_address': 1}"
 										options='{"always_reload": True}' />
+								    <field name="fees" />
 								</group>
 								<separator colspan="4" string="Address Detail" />
 								<group>

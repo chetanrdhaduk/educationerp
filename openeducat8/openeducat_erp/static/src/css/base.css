@@ -26,6 +26,10 @@
   text-align: center;
 }
 
+.oe_webclient td.announcement_bar {
+display: none;
+}
+
 .openerp .oe_login button {
 cursor: pointer;
 padding: 6px 16px;

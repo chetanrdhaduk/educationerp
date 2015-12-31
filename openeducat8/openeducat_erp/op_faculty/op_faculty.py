@@ -126,6 +126,22 @@ class HrEmployee(models.Model):
                 'Home Address and working address should be same!'))
         if self.address_home_id:
             self.address_home_id.write({'supplier': True, 'employee': True})
-
-
+            
+   
+    def write(self, cr, uid, ids, data, context=None):
+        result = super(HrEmployee, self).write(cr, uid, ids, data, context=context)
+        categ_ids = []
+        for rec in self.browse(cr,uid,ids,context=context):
+            for c in rec.category_ids:
+                categ_ids.append(c.id)
+            f_o = self.pool.get('op.faculty')
+            faculty_ids = f_o.search(cr,uid,[])    
+            for rec2 in f_o.browse(cr,uid,faculty_ids):
+                if rec2.emp_id.id == rec.id:
+                    f_o.write(cr,uid,rec2.id,{'name':rec.name,'nationality.id':rec.country_id,
+                                              'gender':rec.gender,'email':rec.work_email,
+                                              'category_ids':[(6,0,categ_ids)],
+                                            'department_id':rec.department_id.id}
+                                            )
+            return result
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

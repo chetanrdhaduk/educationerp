@@ -19,8 +19,8 @@
 #
 ###############################################################################
 
-from openerp import models, fields, api
-
+from openerp import models, fields, api,_
+from openerp.exceptions import ValidationError
 
 class OpStudent(models.Model):
     _name = 'op.student'
@@ -38,7 +38,7 @@ class OpStudent(models.Model):
 #                 roll_no = roll_number.roll_number
 #                 seq = roll_number.standard_id.sequence
 #         self.roll_number = roll_no
-
+    fees = fields.Integer("Fees")
     middle_name = fields.Char('Middle Name', size=128)
     last_name = fields.Char('Middle Name', size=128)
     birth_date = fields.Date('Birth Date', required=True)
@@ -116,6 +116,15 @@ class OpStudent(models.Model):
 #         self.pool.get('hr.employee').unlink(cr, uid, unlink_emp_tmpl_ids, context=context)
 #         return res
 
+    @api.constrains('index_number')
+    def _check_student_index(self):
+        all_tt_ids = self.search([])
+        for a in all_tt_ids:
+            if a.id == self.id:
+                return True
+            if self.index_number == a.index_number:
+                raise ValidationError(
+                    _("Index Number Already Exist"))
 
     @api.multi
     def create_invoice(self):
@@ -125,14 +134,21 @@ class OpStudent(models.Model):
 
         default_fields = invoice_pool.fields_get(self)
         invoice_default = invoice_pool.default_get(default_fields)
-
+        invoice_line_data = []
         for student in self:
             type = 'out_invoice'
             partner_id = student.partner_id.id
             onchange_partner = invoice_pool.onchange_partner_id(
                 type, partner_id)
             invoice_default.update(onchange_partner['value'])
-
+            
+            invoice_val_data = {
+                                 'name':"Fees",
+                                 'price_unit':student.fees
+                                 }
+            
+            invoice_line_data.append(invoice_val_data)
+   
             invoice_data = {
                 'partner_id': student.partner_id.id,
                 'date_invoice': fields.Date.today(),
@@ -140,6 +156,8 @@ class OpStudent(models.Model):
                 student.standard_id.payment_term.id or
                 student.course_id.payment_term and
                 student.course_id.payment_term.id or False,
+                'invoice_line':  [(0, 0,invoice_val_data)]
+                
             }
 
         invoice_default.update(invoice_data)
@@ -192,5 +210,6 @@ class student_relative(models.Model):
     student_id = fields.Many2one('op.student', string='Student')
     comment = fields.Char('Comment', size=512)
     stud_id = fields.Many2one('op.student', string='Student')
+    
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
