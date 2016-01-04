@@ -57,7 +57,17 @@ class OpBookMovement(models.Model):
         if self.issued_date > self.return_date:
             raise ValidationError(
                 _("Issue Date Should be greater than Return Date."))
-
+            
+#     @api.constrains('quantity')
+#     def _check_number_book(self):
+#           move_total_book = 0
+#           for rec in self.book_id:
+#              for move_id in rec.movement_line:
+#                     move_total_book += move_id.quantity
+#              if rec.number_book < move_total_book:
+#                      raise ValidationError(
+#                     _("This Book not Available"))
+                     
     @api.onchange('book_id')
     def onchange_book_id(self):
         self.state = self.book_id.state
@@ -65,10 +75,21 @@ class OpBookMovement(models.Model):
     @api.one
     def issue_book(self):
         ''' function to issue book '''
-        if self.book_id.state and self.book_id.state == 'a':
-            self.book_id.state = 'i'
-            self.state = 'i'
-
+        move_total_book = 0
+        for rec in self.book_id:
+           for move_id in rec.movement_line:
+               if move_id.state == 'i':
+                  move_total_book += move_id.quantity
+           if rec.number_book < move_total_book  :
+                   raise ValidationError(
+                  _("This Book not Available"))
+           if rec.number_book >= (move_total_book + self.quantity) : 
+               #if self.book_id.state and self.book_id.state == 'a':
+                self.book_id.state = 'i'
+                self.state = 'i'
+           else:
+                   raise ValidationError(
+                  _("This Book not Available"))
     @api.one
     def calculate_penalty(self):
         penalty_amt = 0

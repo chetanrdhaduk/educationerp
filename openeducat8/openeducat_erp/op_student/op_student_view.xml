@@ -90,7 +90,7 @@
 					<!-- <field name="id_number" /> -->
 					<field name="course_id" />
 					<field name="batch_id" />
-					<field name="standard_id" />
+					<field name="standard_id"  />
 					<field name="nationality" />
 					<field name="blood_group" />
 					<field name="language" />
@@ -187,6 +187,7 @@
 									<field name="batch_id" domain="[('course_id','=',course_id)]" />
 									<field name="division_id" />
 									<field name="gr_no" />
+								
 									<!--
 									<field name="roll_number_line" colspan="4" nolabel="1"
 										context="{'default_course_id':course_id,
@@ -194,7 +195,12 @@
                                      'default_standard_id':standard_id,
                                      'default_division_id':division_id}" /> -->
 								</group>
-							</page>
+								</page>
+								
+						    <page string="Book Details">
+                                <separator string="Book Details" colspan="4" />
+                                <field name="book_ids" colspan="4" nolabel="1"/>
+                            </page>
 							<!--
 							<page string="Assignments">
 								<separator string="Assignment" colspan="4" />

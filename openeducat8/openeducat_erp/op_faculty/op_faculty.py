@@ -26,7 +26,7 @@ from openerp.exceptions import Warning
 class OpFaculty(models.Model):
     _name = 'op.faculty'
     _inherits = {'res.partner': 'partner_id'}
-
+    book_ids = fields.One2many('op.book.movement','faculty_book_id',string = "Book")
     partner_id = fields.Many2one(
         'res.partner', 'Partner', required=True, ondelete="cascade")
     middle_name = fields.Char('Middle Name', size=128)
@@ -62,10 +62,11 @@ class OpFaculty(models.Model):
     emp_id = fields.Many2one('hr.employee', 'Employee')
     category_ids = fields.Many2many('hr.employee.category', string='Tags')
     department_id = fields.Many2one('hr.department', string='Department')
-
+   
     @api.model
-    def create(self, vals):
+    def create(self,vals):
         res = super(OpFaculty, self).create(vals)
+        
         emp_obj = self.env['hr.employee']
         categ_ids = []
         if res and not res.emp_id:
@@ -77,12 +78,34 @@ class OpFaculty(models.Model):
                 'gender': res.gender,
                 'work_email': res.email,
                 'category_ids': [(6,0,categ_ids)],
-                'department_id': res.department_id and res.department_id.id or False
+                'department_id': res.department_id and res.department_id.id or False,
+                'faculty_emp_id': res.id
             }
             emp_id = emp_obj.create(vals)
-            res.write({'emp_id': emp_id.id})
+            res.write({'emp_id': vals})
         return res
-
+   
+    @api.multi
+    def write(self,vals):
+        
+        res  = super(OpFaculty, self).write(vals)
+    
+        categ_ids2 = []
+        hr_obj = self.env['hr.employee']
+        for c in self.emp_id.category_ids:
+            categ_ids2.append(c.id)
+        self.emp_id.write({
+          'name': self.name or '',
+          'country_id': self.nationality and self.nationality.id or False,
+          'gender': self.gender,
+          'work_email': self.email,
+          'category_ids': [(6,0,categ_ids2)],
+          'department_id': self.department_id and self.department_id.id or False,
+          'faculty_emp_id': self.id
+        })
+        
+        return res
+        
     @api.one
     def create_employee(self):
         emp_obj = self.env['hr.employee']
@@ -97,7 +120,7 @@ class OpFaculty(models.Model):
 
 class HrEmployee(models.Model):
     _inherit = 'hr.employee'
-
+    faculty_emp_id = fields.Many2one('op.faculty', string='Faculty')
     @api.onchange('user_id')
     def onchange_user(self):
         if self.user_id:
@@ -127,21 +150,24 @@ class HrEmployee(models.Model):
         if self.address_home_id:
             self.address_home_id.write({'supplier': True, 'employee': True})
             
-   
-    def write(self, cr, uid, ids, data, context=None):
-        result = super(HrEmployee, self).write(cr, uid, ids, data, context=context)
-        categ_ids = []
-        for rec in self.browse(cr,uid,ids,context=context):
-            for c in rec.category_ids:
-                categ_ids.append(c.id)
-            f_o = self.pool.get('op.faculty')
-            faculty_ids = f_o.search(cr,uid,[])    
-            for rec2 in f_o.browse(cr,uid,faculty_ids):
-                if rec2.emp_id.id == rec.id:
-                    f_o.write(cr,uid,rec2.id,{'name':rec.name,'nationality.id':rec.country_id,
-                                              'gender':rec.gender,'email':rec.work_email,
-                                              'category_ids':[(6,0,categ_ids)],
-                                            'department_id':rec.department_id.id}
-                                            )
-            return result
+class OpBook(models.Model):
+    _inherit = 'op.book.movement'
+    
+    faculty_book_id = fields.Many2one('op.faculty',string = "Faculty Book")   
+#     @api.multi
+#     def write(self,vals):
+#         result = super(HrEmployee, self).write(vals)
+#         categ_ids = []
+#         for c in self.category_ids:
+#             categ_ids.append(c.id)
+#         print self.faculty_emp_id
+#         if self.faculty_emp_id:
+#             self.faculty_emp_id.write({'name':self.name,
+#                                        'nationality.id':self.country_id and self.country_id.id,
+#                                               'gender':self.gender,'email':self.work_email,
+#                                               'category_ids':[(6,0,categ_ids)],
+#                                             'department_id':self.department_id and self.department_id.id
+#                                             })
+#             
+#         return result
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

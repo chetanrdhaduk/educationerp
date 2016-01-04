@@ -19,8 +19,8 @@
 #
 ###############################################################################
 
-from openerp import models, fields
-
+from openerp import models, fields,api,_
+from openerp.exceptions import ValidationError
 
 class OpBook(models.Model):
     _name = 'op.book'
@@ -42,5 +42,36 @@ class OpBook(models.Model):
         'op.subject', string='Subjects', required=True)
     internal_code = fields.Char('Internal ID', size=128)
     queue_ids = fields.Many2many('op.book.queue', string='Book Queue')
+    #availability_book = fields.Integer(compute = '_get_available_book',string ="Availability")
+
+#     @api.constrains('number_book')
+#     def _check_number_book(self):
+#         for rec in movement_line:
+#             print rec.id,"dddd"
+#             self.number_book -= rec.movement_line.quantity
+#             if self.number_book > rec.movement_line.quantity:
+#                  return True
+#             if self.number_book < rec.movement_line.quantity:
+#                  raise ValidationError(
+#                      _("Book not available"))
+                
+    @api.model
+    def create(self, vals):
+        res = super(OpBook, self).create(vals)
+        for move_id in res.movement_line:
+            move_id.student_id.write({'book_ids':[(4,move_id.id)]})
+        for move_id in res.movement_line:
+            move_id.faculty_id.write({'book_ids':[(4,move_id.id)]})
+        return res
+        
+    @api.multi
+    def write(self, vals):
+        res = super(OpBook, self).write(vals)
+        for move_id in self.movement_line:
+            move_id.student_id.write({'book_ids':[(4,move_id.id)]})
+        for move_id in self.movement_line:
+            move_id.faculty_id.write({'book_ids':[(4,move_id.id)]})
+        return res
+
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

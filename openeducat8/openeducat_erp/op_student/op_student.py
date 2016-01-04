@@ -38,6 +38,7 @@ class OpStudent(models.Model):
 #                 roll_no = roll_number.roll_number
 #                 seq = roll_number.standard_id.sequence
 #         self.roll_number = roll_no
+    book_ids = fields.One2many('op.book.movement','student_book_id',string = "Book")
     fees = fields.Integer("Fees")
     middle_name = fields.Char('Middle Name', size=128)
     last_name = fields.Char('Middle Name', size=128)
@@ -116,6 +117,20 @@ class OpStudent(models.Model):
 #         self.pool.get('hr.employee').unlink(cr, uid, unlink_emp_tmpl_ids, context=context)
 #         return res
 
+
+    @api.model
+    def create(self, vals):
+        res = super(OpStudent, self).create(vals)
+        res.standard_id.write({'student_ids':[(4,res.id)],'division_ids':[(4,res.division_id.id )] or False})
+        return res
+
+    @api.multi
+    def write(self, vals):
+        res = super(OpStudent, self).write(vals)
+        self.standard_id.write({'student_ids':[(4,self.id)],'division_ids':[(4,self.division_id.id )] or False})
+        return res
+
+    
     @api.constrains('index_number')
     def _check_student_index(self):
         all_tt_ids = self.search([])
@@ -212,4 +227,8 @@ class student_relative(models.Model):
     stud_id = fields.Many2one('op.student', string='Student')
     
 
+class OpBook(models.Model):
+    _inherit = 'op.book.movement'
+    
+    student_book_id = fields.Many2one('op.student',string = "Student Book")
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
