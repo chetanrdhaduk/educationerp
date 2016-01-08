@@ -161,7 +161,7 @@
 
 "access_op_parent","name_op_parent","model_op_parent","base.group_user",1,1,1,0
 
-"access_op_student_student","op_student_student","model_op_student","group_op_student",1,0,0,0
+"access_op_student_student","op_student_student","model_op_student","group_op_student",1,1,0,0
 "access_op_student_faculty","op_student_faculty","model_op_student","group_op_faculty",1,1,1,0
 "access_op_student_library","op_student_library","model_op_student","group_op_library",1,0,0,0
 "access_op_student_parent","op_student_parent","model_op_student","group_op_parent",1,0,0,0

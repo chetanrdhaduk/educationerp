@@ -82,12 +82,11 @@ class OpFaculty(models.Model):
                 'faculty_emp_id': res.id
             }
             emp_id = emp_obj.create(vals)
-            res.write({'emp_id': vals})
+            res.write({'emp_id': emp_id.id})
         return res
    
     @api.multi
     def write(self,vals):
-        
         res  = super(OpFaculty, self).write(vals)
     
         categ_ids2 = []

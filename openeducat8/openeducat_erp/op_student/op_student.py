@@ -64,7 +64,7 @@ class OpStudent(models.Model):
     id_number = fields.Char('ID Card Number', size=64)
     photo = fields.Binary('Photo')
     course_id = fields.Many2one('op.course', 'College', required=True)
-    division_id = fields.Many2one('op.division', 'Division')
+    division_id = fields.Many2one('op.division', 'Division', required=True)
     batch_id = fields.Many2one('op.batch', 'Batch', required=True)
     standard_id = fields.Many2one(
         'op.standard', 'Standard', required=True)
@@ -121,13 +121,13 @@ class OpStudent(models.Model):
     @api.model
     def create(self, vals):
         res = super(OpStudent, self).create(vals)
-        res.standard_id.write({'student_ids':[(4,res.id)],'division_ids':[(4,res.division_id.id )] or False})
+        res.standard_id.write({'student_ids':[(4,res.id)],'division_ids':[(4,res.division_id and res.division_id.id or False)] })
         return res
 
     @api.multi
     def write(self, vals):
         res = super(OpStudent, self).write(vals)
-        self.standard_id.write({'student_ids':[(4,self.id)],'division_ids':[(4,self.division_id.id )] or False})
+        self.standard_id.write({'student_ids':[(4,self.id)],'division_ids':[(4,self.division_id and self.division_id.id or False)] })
         return res
 
     
